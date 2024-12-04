@@ -66,7 +66,7 @@ class Font(BaseModel):
     @property
     def download_link(self) -> str:
         return urljoin(
-            "https://github.com/xiaohuohumax/subset-font/raw/master/",
+            "https://github.com/xiaohuohumax/subset-font/raw/main/",
             path_url_quote(self.file),
         )
 

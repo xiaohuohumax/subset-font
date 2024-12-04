@@ -10,12 +10,12 @@
 <!-- download_start -->
 | 字体名称 | 文件名 | 精简前 | 精简后 | 许可证 |
 | --- | --- | --- | --- | --- |
-| 寒蝉圆黑体Regular | ChillRoundGothic.otf | [下载](https://github.com/xiaohuohumax/subset-font/raw/master/fonts/ChillRoundGothic.otf) 8.94MB | [下载](https://github.com/xiaohuohumax/subset-font/raw/master/dist/ChillRoundGothic.otf) 2.46MB | [ChillRoundGothic.txt](licenses/ChillRoundGothic.txt) |
-| HarmonyOS Sans | HarmonyOS_Sans.ttf | [下载](https://github.com/xiaohuohumax/subset-font/raw/master/fonts/HarmonyOS_Sans.ttf) 153.20KB | [下载](https://github.com/xiaohuohumax/subset-font/raw/master/dist/HarmonyOS_Sans.ttf) 22.17KB | [HarmonyOS_Sans.txt](licenses/HarmonyOS_Sans.txt) |
-| MiSans | MiSans.ttf | [下载](https://github.com/xiaohuohumax/subset-font/raw/master/fonts/MiSans.ttf) 7.70MB | [下载](https://github.com/xiaohuohumax/subset-font/raw/master/dist/MiSans.ttf) 1.61MB | [MiSans.txt](licenses/MiSans.txt) |
-| OPPO Sans 4.0 | OPPO Sans 4.0.ttf | [下载](https://github.com/xiaohuohumax/subset-font/raw/master/fonts/OPPO%20Sans%204.0.ttf) 21.69MB | [下载](https://github.com/xiaohuohumax/subset-font/raw/master/dist/OPPO%20Sans%204.0.ttf) 4.54MB | [OPPO Sans 4.0.txt](licenses/OPPO%20Sans%204.0.txt) |
-| 得意黑 斜体 | SmileySans-Oblique.ttf | [下载](https://github.com/xiaohuohumax/subset-font/raw/master/fonts/SmileySans-Oblique.ttf) 2.51MB | [下载](https://github.com/xiaohuohumax/subset-font/raw/master/dist/SmileySans-Oblique.ttf) 1.87MB | [SmileySans-Oblique.txt](licenses/SmileySans-Oblique.txt) |
-| 思源宋体 | SourceHanSerifSC.otf | [下载](https://github.com/xiaohuohumax/subset-font/raw/master/fonts/SourceHanSerifSC.otf) 23.41MB | [下载](https://github.com/xiaohuohumax/subset-font/raw/master/dist/SourceHanSerifSC.otf) 4.54MB | [SourceHanSerifSC.txt](licenses/SourceHanSerifSC.txt) |
+| 寒蝉圆黑体Regular | ChillRoundGothic.otf | [下载](https://github.com/xiaohuohumax/subset-font/raw/main/fonts/ChillRoundGothic.otf) 8.94MB | [下载](https://github.com/xiaohuohumax/subset-font/raw/main/dist/ChillRoundGothic.otf) 2.46MB | [ChillRoundGothic.txt](licenses/ChillRoundGothic.txt) |
+| HarmonyOS Sans | HarmonyOS_Sans.ttf | [下载](https://github.com/xiaohuohumax/subset-font/raw/main/fonts/HarmonyOS_Sans.ttf) 153.20KB | [下载](https://github.com/xiaohuohumax/subset-font/raw/main/dist/HarmonyOS_Sans.ttf) 22.17KB | [HarmonyOS_Sans.txt](licenses/HarmonyOS_Sans.txt) |
+| MiSans | MiSans.ttf | [下载](https://github.com/xiaohuohumax/subset-font/raw/main/fonts/MiSans.ttf) 7.70MB | [下载](https://github.com/xiaohuohumax/subset-font/raw/main/dist/MiSans.ttf) 1.61MB | [MiSans.txt](licenses/MiSans.txt) |
+| OPPO Sans 4.0 | OPPO Sans 4.0.ttf | [下载](https://github.com/xiaohuohumax/subset-font/raw/main/fonts/OPPO%20Sans%204.0.ttf) 21.69MB | [下载](https://github.com/xiaohuohumax/subset-font/raw/main/dist/OPPO%20Sans%204.0.ttf) 4.54MB | [OPPO Sans 4.0.txt](licenses/OPPO%20Sans%204.0.txt) |
+| 得意黑 斜体 | SmileySans-Oblique.ttf | [下载](https://github.com/xiaohuohumax/subset-font/raw/main/fonts/SmileySans-Oblique.ttf) 2.51MB | [下载](https://github.com/xiaohuohumax/subset-font/raw/main/dist/SmileySans-Oblique.ttf) 1.87MB | [SmileySans-Oblique.txt](licenses/SmileySans-Oblique.txt) |
+| 思源宋体 | SourceHanSerifSC.otf | [下载](https://github.com/xiaohuohumax/subset-font/raw/main/fonts/SourceHanSerifSC.otf) 23.41MB | [下载](https://github.com/xiaohuohumax/subset-font/raw/main/dist/SourceHanSerifSC.otf) 4.54MB | [SourceHanSerifSC.txt](licenses/SourceHanSerifSC.txt) |
 <!-- download_end -->
 
 ## 🔨 使用方法
