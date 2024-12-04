@@ -1,0 +1,25 @@
+{
+  "yaml.schemas": {
+    ".vscode/logging.schema.json": "logging.yaml"
+  },
+  "cSpell.words": [
+    "asctime",
+    "commitizen",
+    "datefmt",
+    "dotenv",
+    "levelname",
+    "msecs",
+    "pydantic",
+    "ruamel",
+    "notset",
+    "subsetter",
+    "oppo"
+  ],
+  "cSpell.ignorePaths": [
+    "*.lock",
+    "*.log",
+    ".vscode",
+    "*.toml",
+    ".*"
+  ],
+}

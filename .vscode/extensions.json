@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "redhat.vscode-yaml",
+    "streetsidesoftware.code-spell-checker",
+    "editorconfig.editorconfig",
+    "ms-python.python",
+    "donjayamanne.python-environment-manager",
+    "kamilturek.vscode-pyproject-toml-snippets",
+    "charliermarsh.ruff",
+  ]
+}

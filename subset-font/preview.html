@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>精简字体预览</title>
+  <!-- import-fonts-styles -->
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    .switch-button-group {
+      width: 100%;
+      position: sticky;
+      top: 0;
+      left: 0;
+      background-color: white;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .switch-button-group button.active {
+      border-color: #333;
+    }
+
+    button {
+      font-size: 16px;
+      line-height: 16px;
+      padding: 8px 14px;
+      cursor: pointer;
+      border: 1px solid #ccc;
+      border-radius: 16px;
+    }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      background: #fdfcfd;
+    }
+
+    pre {
+      margin: 20px 0;
+      font-size: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="switch-button-group"><!-- switch-button-group --></div>
+  <pre><!-- subset-content --></pre>
+  <script>
+    function switchFont(fontName) {
+      document.querySelector('pre').style.fontFamily = `"${fontName}"`;
+    }
+    document.querySelectorAll('.switch-button-group button').forEach((button, _, buttons) => {
+      button.addEventListener('click', () => {
+        switchFont(button.getAttribute('data-name'));
+        buttons.forEach(button => button.classList.remove('active'));
+        button.classList.add('active');
+      });
+    });
+  </script>
+</body>
+
+</html>

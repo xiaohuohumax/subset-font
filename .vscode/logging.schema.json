@@ -1,0 +1,223 @@
+{
+  "$defs": {
+    "Level": {
+      "description": "Log level",
+      "oneOf": [
+        {
+          "enum": [
+            "CRITICAL",
+            "FATAL",
+            "ERROR",
+            "WARN",
+            "WARNING",
+            "INFO",
+            "DEBUG",
+            "NOTSET"
+          ],
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Level"
+    },
+    "Formatter": {
+      "title": "Formatter",
+      "description": "Defines the configuration of the log formatter for formatting the output of log messages",
+      "type": "object",
+      "properties": {
+        "format": {
+          "title": "Format",
+          "type": "string",
+          "default": null,
+          "description": "Format of the log message"
+        },
+        "datefmt": {
+          "title": "Date format",
+          "type": "string",
+          "default": null,
+          "description": "Format of the date in the log message"
+        }
+      }
+    },
+    "Filter": {
+      "title": "Filter",
+      "description": "Defines the configuration of the log filter for specifying which log messages should be recorded or ignored",
+      "type": "object",
+      "properties": {
+        "name": {
+          "title": "Logger name",
+          "type": "string",
+          "default": "",
+          "description": "Name of the logger associated with this filter"
+        }
+      }
+    },
+    "Handler": {
+      "title": "Handler",
+      "description": "Defines the configuration of the log handler, specifying how to process the logged messages",
+      "type": "object",
+      "required": [
+        "class"
+      ],
+      "properties": {
+        "class": {
+          "title": "Class",
+          "type": "string",
+          "description": "Name of the handler class"
+        },
+        "level": {
+          "title": "Level",
+          "$ref": "#/$defs/Level",
+          "description": "Log level of the handler"
+        },
+        "formatter": {
+          "title": "Formatter",
+          "type": "string",
+          "description": "Name of the formatter associated with this handler"
+        },
+        "filters": {
+          "title": "Filters",
+          "type": "array",
+          "items": {
+            "title": "Filter id",
+            "type": "string"
+          },
+          "description": "List of filters associated with this handler"
+        }
+      }
+    },
+    "Logger": {
+      "title": "Logger",
+      "description": "Defines the configuration of the logger for specifying how to log messages of a specific category",
+      "type": "object",
+      "properties": {
+        "level": {
+          "title": "Level",
+          "$ref": "#/$defs/Level",
+          "description": "Log level of the logger"
+        },
+        "propagate": {
+          "title": "Propagate",
+          "type": "boolean",
+          "description": "Whether to propagate log messages to parent loggers"
+        },
+        "filters": {
+          "title": "Filters",
+          "type": "array",
+          "items": {
+            "title": "Filter id",
+            "type": "string"
+          },
+          "description": "List of filters associated with this logger"
+        },
+        "handlers": {
+          "title": "Handlers",
+          "type": "array",
+          "items": {
+            "title": "Handler id",
+            "type": "string"
+          },
+          "description": "List of handlers associated with this logger"
+        }
+      }
+    }
+  },
+  "properties": {
+    "version": {
+      "title": "Version",
+      "type": "integer",
+      "default": 1,
+      "description": "Version number of the log configuration, defaults to 1"
+    },
+    "formatters": {
+      "title": "Formatters",
+      "type": "object",
+      "description": "Configuration of the log message formatters",
+      "patternProperties": {
+        "(.)+": {
+          "$ref": "#/$defs/Formatter"
+        }
+      }
+    },
+    "filters": {
+      "title": "Filters",
+      "type": "object",
+      "description": "Configuration of the log filters",
+      "patternProperties": {
+        "(.)+": {
+          "$ref": "#/$defs/Filter"
+        }
+      }
+    },
+    "handlers": {
+      "title": "Handlers",
+      "type": "object",
+      "description": "Configuration of the log handlers",
+      "patternProperties": {
+        "(.)+": {
+          "$ref": "#/$defs/Handler"
+        }
+      }
+    },
+    "loggers": {
+      "title": "Loggers",
+      "type": "object",
+      "description": "Configuration of the loggers",
+      "patternProperties": {
+        "(.)+": {
+          "$ref": "#/$defs/Logger"
+        }
+      }
+    },
+    "root": {
+      "title": "Root logger",
+      "type": "object",
+      "description": "Configuration of the root logger",
+      "properties": {
+        "level": {
+          "title": "Level",
+          "$ref": "#/$defs/Level",
+          "description": "Log level of the root logger"
+        },
+        "filters": {
+          "title": "Filters",
+          "type": "array",
+          "items": {
+            "title": "Filter id",
+            "type": "string"
+          },
+          "description": "List of filters for the root logger"
+        },
+        "handlers": {
+          "title": "Handlers",
+          "type": "array",
+          "items": {
+            "title": "Handler id",
+            "type": "string"
+          },
+          "description": "List of handlers for the root logger"
+        }
+      }
+    },
+    "incremental": {
+      "title": "Incremental configuration",
+      "type": "boolean",
+      "default": false,
+      "description": "Whether to enable incremental configuration, defaults to false"
+    },
+    "disable_existing_loggers": {
+      "title": "Disable existing loggers",
+      "type": "boolean",
+      "default": true,
+      "description": "Whether to disable existing loggers, defaults to true"
+    }
+  },
+  "title": "Logging",
+  "description": "Logging configuration",
+  "type": "object",
+  "required": [
+    "version"
+  ]
+}

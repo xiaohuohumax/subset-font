@@ -1,0 +1,42 @@
+[tool.commitizen]
+name = "cz_customize"
+tag_format = "$version"
+version_scheme = "pep440"
+version_provider = "pep621"
+update_changelog_on_bump = true
+major_version_zero = true
+
+[tool.commitizen.customize]
+message_template = "{{change_type}} {{message}}{% if body %}\n\n{{body}}{% endif %}"
+commit_parser = "^(?P<change_type>\\w+):\\s(?P<emoji>[^\\s]+)\\s(?P<message>.*)"
+
+[[tool.commitizen.customize.questions]]
+type = "list"
+name = "change_type"
+choices = [
+  { value = "feat: :sparkles:", name = "feat:      ✨ 新增功能 | Introducing new features" },
+  { value = "fix: :bug:", name = "fix:       🐛 修复缺陷 | Fixing a bug" },
+  { value = "init: :tada:", name = "init:      🎉 初始项目 | Initial commit" },
+  { value = "art: :art:", name = "art:       🎨 结构改进 | Improving structure / format of the code" },
+  { value = "docs: :memo:", name = "docs:      📝 文档更新 | Documentation only changes" },
+  { value = "style: :lipstick:", name = "style:     💄 代码格式 | Updating the UI and style files" },
+  { value = "refactor: :recycle:", name = "refactor:  ♻️  代码重构 | A code change that neither fixes a bug nor adds a feature" },
+  { value = "perf: :zap:", name = "perf:      ⚡️ 性能提升 | A code change that improves performance" },
+  { value = "test: :white_check_mark:", name = "test:      ✅ 测试相关 | Adding missing tests or correcting existing tests" },
+  { value = "build: :package:", name = "build:     📦️ 构建相关 | Changes that affect the build system or external dependencies" },
+  { value = "ci: :ferris_wheel:", name = "ci:        🎡 持续集成 | Changes to our CI configuration files and scripts" },
+  { value = "revert: :hammer:", name = "revert:    🔨 回退代码 | Revert to a commit" },
+  { value = "chore: :rewind:", name = "chore:     ⏪️ 其他修改 | Other changes that do not modify src or test files" },
+]
+message = "选择你正在提交的改动类型:"
+
+[[tool.commitizen.customize.questions]]
+type = "input"
+name = "message"
+message = "填写简短精炼的变更描述:"
+
+[[tool.commitizen.customize.questions]]
+type = "input"
+name = "body"
+multiline = true
+message = "[可选]填写更加详细的变更描述:"
