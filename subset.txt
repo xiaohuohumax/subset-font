@@ -1,5 +1,8 @@
 # 常用字符表
 
+# 空格
+ 
+
 # 英文
 abcdefghijklmnopqrstuvwxyz
 ABCDEFGHIJKLMNOPQRSTUVWXYZ
