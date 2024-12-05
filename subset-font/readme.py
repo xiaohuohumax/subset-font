@@ -11,8 +11,8 @@ class Readme:
     download_start = "<!-- download_start -->"
     download_end = "<!-- download_end -->"
 
-    def __init__(self, file: str):
-        self.file = Path(file)
+    def __init__(self, file: Path):
+        self.file = file
         if not self.file.exists():
             raise FileNotFoundError(f"{self.file} not found")
 

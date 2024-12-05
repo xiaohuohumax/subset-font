@@ -1,4 +1,5 @@
 import re
+import shutil
 from pathlib import Path
 from typing import Any, List
 from urllib.parse import quote
@@ -49,3 +50,15 @@ def replace_comment_element(comment: str, data: str, replace_data: str) -> str:
         data,
         flags=re.DOTALL,
     )
+
+
+def clear_folder(folder: Path) -> None:
+    for file in folder.iterdir():
+        if file.is_file():
+            file.unlink()
+        else:
+            shutil.rmtree(file)
+
+
+def copy_folder(src: Path, dst: Path) -> None:
+    shutil.copytree(src, dst, dirs_exist_ok=True)

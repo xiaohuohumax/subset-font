@@ -5,8 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>精简字体预览</title>
-  <link rel="icon" href="./logo.svg">
-  <!-- import-fonts-styles -->
+  <link rel="icon" href="./static/logo.svg">
   <style>
     * {
       padding: 0;
@@ -53,15 +52,30 @@
 </head>
 
 <body>
-  <div class="switch-button-group"><!-- switch-button-group --></div>
-  <pre><!-- subset-content --></pre>
+  <div class="switch-button-group"></div>
+  <pre></pre>
+  <script src="./static/data.js"></script>
   <script>
-    function switchFont(fontName) {
-      document.querySelector('pre').style.fontFamily = `"${fontName}"`;
-    }
-    document.querySelectorAll('.switch-button-group button').forEach((button, _, buttons) => {
+    const style = document.createElement('style');
+    style.innerHTML = window.data.fonts.map(font => {
+      return `@font-face { font-family: "${font.name}"; src: url('${font.file_name}'); }`
+    }).join('\n');
+    document.head.appendChild(style);
+
+    const switchButtonGroup = document.querySelector('.switch-button-group');
+    window.data.fonts.forEach(font => {
+      const button = document.createElement('button');
+      button.textContent = font.name;
+      button.setAttribute('data-name', font.name);
+      switchButtonGroup.appendChild(button);
+    });
+
+    const pre = document.querySelector('pre');
+    pre.textContent = window.data.subset;
+
+    switchButtonGroup.querySelectorAll('button').forEach((button, _, buttons) => {
       button.addEventListener('click', () => {
-        switchFont(button.getAttribute('data-name'));
+        pre.style.fontFamily = `"${button.getAttribute('data-name')}"`;
         buttons.forEach(button => button.classList.remove('active'));
         button.classList.add('active');
       });
