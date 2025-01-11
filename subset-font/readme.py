@@ -2,8 +2,8 @@ import re
 from pathlib import Path
 from typing import List
 
-from .util import read_file, write_file
 from .font import FontRow
+from .util import read_file, write_file
 
 
 class Readme:
@@ -37,7 +37,7 @@ class Readme:
         linesep = "\n"
         readme_content = re.sub(
             rf"{self.download_start}.*{self.download_end}",
-            lambda _: f"{self.download_start}{linesep +linesep.join(rows) +linesep}{self.download_end}",
+            lambda _: f"{self.download_start}{linesep + linesep.join(rows) + linesep}{self.download_end}",
             readme_content,
             flags=re.DOTALL,
         )

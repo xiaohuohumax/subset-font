@@ -1,9 +1,9 @@
 from pathlib import Path
-from urllib.parse import urljoin
 from typing import List, Optional
+from urllib.parse import urljoin
 
 from fontTools import subset
-from pydantic import BaseModel, computed_field, Field
+from pydantic import BaseModel, Field, computed_field
 
 from .util import get_file_size, path_url_quote
 

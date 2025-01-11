@@ -1,1 +1,4 @@
-window.data = []
+window.data = {
+  fonts: [],
+  subset: ""
+}

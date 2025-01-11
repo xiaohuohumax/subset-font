@@ -20,6 +20,12 @@ def reade_lines(file: Path, encoding="utf-8") -> List[str]:
     return read_file(file, encoding).splitlines()
 
 
+def read_file_without_comments(file: Path, encoding="utf-8") -> str:
+    return "\n".join(
+        [line for line in reade_lines(file, encoding) if not line.startswith("#")]
+    )
+
+
 def read_yaml(file: Path, encoding="utf-8") -> Any:
     from ruamel.yaml import YAML
 
@@ -34,9 +40,9 @@ def get_file_size(file: Path) -> str:
     elif size < 1024**2:
         return f"{size / 1024:.2f}KB"
     elif size < 1024**3:
-        return f"{size / 1024 ** 2:.2f}MB"
+        return f"{size / 1024**2:.2f}MB"
     else:
-        return f"{size / 1024 ** 3:.2f}GB"
+        return f"{size / 1024**3:.2f}GB"
 
 
 def path_url_quote(path: Path) -> str:
@@ -53,6 +59,8 @@ def replace_comment_element(comment: str, data: str, replace_data: str) -> str:
 
 
 def clear_folder(folder: Path) -> None:
+    if not folder.exists():
+        return
     for file in folder.iterdir():
         if file.is_file():
             file.unlink()
